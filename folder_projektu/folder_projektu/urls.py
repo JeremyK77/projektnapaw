@@ -17,6 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from projektnapaw.folder_projektu.folder_aplikacji import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.home, name='home'),
+    path('items/', views.item_list, name='item_list'),  # Lista produktów
+    path('cart/', views.cart, name='cart'),            # Koszyk
+    path('orders/', views.order_list, name='order_list'),
 ]

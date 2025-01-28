@@ -1,0 +1,11 @@
+<h1>Twój koszyk</h1>
+{% if cart %}
+    <ul>
+        {% for item in cart.cart_items.all %}
+            <li>{{ item.item.name }} - {{ item.quantity }} x {{ item.item.price }} PLN</li>
+        {% endfor %}
+    </ul>
+    <p>Całkowita cena: {{ cart.total_price }} PLN</p>
+{% else %}
+    <p>Koszyk jest pusty</p>
+{% endif %}
